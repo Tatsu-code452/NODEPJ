@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Content</title>
+  </head>
+  <body>
+    <h1>File Content</h1>
+    <pre id="file-content"></pre>
+  </body>
+  <script>
+    fetch("/file-content")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("file-content").textContent = data;
+      });
+  </script>
+</html>
